@@ -1,0 +1,301 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ambient Intelligence: The Technology That Learns While You Live</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        background-color: #005E60;
+        color: #FFFFFF;
+        overflow-x: hidden;
+        line-height: 1.5;
+    }
+
+    .presentation-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      border: 3px solid #C8FF08;
+      box-shadow: 0 0 40px rgba(200, 255, 8, 0.2);
+    }
+
+    .slide {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+    }
+
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px; 
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      background: linear-gradient(45deg, #C8FF08, #FFFFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 20px rgba(200, 255, 8, 0.3);
+    }
+
+    .info-blocks {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      width: 100%;
+    }
+
+    .info-card ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        }
+
+
+    .info-card li {
+        margin-bottom: 10px;
+        padding: 0 10px;
+    }
+    .info-card p {
+        margin: 6px 0;
+        font-size: 0.95rem;
+    }
+    .info-card ul li::before {
+        content: "• ";
+        color: #C8FF08;
+        margin-right: 6px;
+    }
+
+    .info-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(200, 255, 8, 0.2);
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        backdrop-filter: blur(15px);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        height: 100%;
+        }
+    .header-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    .header-profile img {
+    height: 75px;
+    width: 75px;
+    object-fit: cover;
+    border: 2px solid #C8FF08;
+    }
+
+    .header-profile span {
+        font-size: 0.65rem;
+        color: #C8FF08;
+        margin-top: 4px;
+    }
+
+    h1 {
+        font-size: 1.65rem; 
+        margin-bottom: 30px;
+        background: linear-gradient(45deg, #C8FF08, #FFFFFF);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 0 0 20px rgba(200, 255, 8, 0.3);
+    }
+
+
+    .info-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(200, 255, 8, 0.3);
+      border-color: #C8FF08;
+    }
+
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .floating-shape {
+      position: absolute;
+      opacity: 0.3;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .floating-shape:nth-child(1) {
+      top: 10%;
+      left: 10%;
+      font-size: 2rem;
+      animation-delay: 0s;
+    }
+
+    .floating-shape:nth-child(2) {
+      top: 70%;
+      right: 15%;
+      font-size: 1.5rem;
+      animation-delay: 2s;
+    }
+
+    .floating-shape:nth-child(3) {
+      bottom: 20%;
+      left: 20%;
+      font-size: 2.5rem;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+    }
+    .header-right-image {
+    height: 75px; 
+    margin-left: 20px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #C8FF08aa;
+    }
+    .how-i-fell-card {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center;  
+        justify-content: flex-start; 
+        gap: 20px;
+        padding: 12px 16px !important;
+        line-height: 1.3 !important;
+        text-align: left; 
+        }
+
+        .how-text {
+        flex: 1;
+        text-align: left;
+        padding-right: 10px;
+        }
+
+        .how-text p {
+        margin-bottom: 12px; 
+        }
+
+    .slide-number {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1024px) {
+      .info-blocks {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.8rem; }
+      .info-card { padding: 15px; }
+      .info-blocks {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="presentation-container">
+    <div class="slide">
+      <div class="floating-elements">
+        <div class="floating-shape">🧠</div>
+        <div class="floating-shape">⚡</div>
+      </div>
+
+      <div class="header-container">
+        <div class="header-profile">
+            <img src="Portfolio_2.jpeg" alt="Profile Picture" />
+            <span>Computer Science at Georgia Tech</span>
+        </div>
+        <h1>Ambient Intelligence: Technology That Learns While You Live</h1>
+         <img src="vernova_logo.PNG" alt="Relevant Graphic" class="header-right-image" />
+        </div>
+
+      <div class="info-blocks">
+  <div class="info-card how-i-fell-card" style="grid-column: span 4; padding: 12px 16px; line-height: 1.1; flex-direction: row; gap: 20px;">
+  <div class="how-text" style="flex: 1; text-align: center; margin-left: 5px, ">
+    <h3>How I Fell Down the Rabbit Hole</h3>
+    <p>Visited a friend's smart home where technology was invisible. Lights dimmed for a movie, AC adjusted to weather, music followed us room to room.</p>
+    <p>No commands made, no apps used, but everything had seamless functionality. <strong>NOT "AI"</strong>, but <strong>"AmI"</strong>: infrastructure that feels psychic.</p>
+  </div>
+  <div class="how-emoji" style="flex-shrink: 0; font-size: 4rem; display: flex; align-items: center;">
+    🏠
+  </div>
+</div>
+  
+  <div class="info-card" style="padding: 12px 16px; line-height: 1.9;">
+    <h3>How It Works</h3>
+    <ul>
+      <li><strong>Invisible Computing</strong></li>
+      <li><strong>Interconnected Web</strong></li>
+      <li><strong>Predictive Behavior</strong></li>
+      <p>Uses sensors and data to anticipate needs and adapt environments seamlessly.</p>
+    </ul>
+  </div>
+  
+  <div class="info-card" style="padding: 12px 16px;">
+    <h3>Healthcare Breakthroughs</h3>
+    <ul>
+      <li>Stanford uses tiny cameras to detect cognitive decline early.</li>
+      <li>Microsoft's ambient listening systems transform healthcare.</li>
+      <li>Human-level accuracy in clinical note generation.</li>
+    </ul>
+  </div>
+  
+  <div class="info-card" style="padding: 12px 16px;">
+    <h3>GE Vernova Opportunity</h3>
+    <ul>
+      <li>Applies ambient intelligence to energy infrastructure.</li>
+      <li>Enables predictive maintenance.</li>
+      <li>Supports smart grid balancing.</li>
+      <li>Drives self-optimizing, intelligent operations.</li>
+    </ul>
+  </div>
+  
+  <div class="info-card" style="padding: 12px 16px;">
+    <h3>Why This Matters to Me</h3>
+    <p>It is bigger than convenience for me because Stanford’s research hits close to home.</p>
+    <p>My grandmother showed early signs of cognitive decline we missed, and I truly believe AmI could have alerted us to unseen changes.</p>
+  </div>
+</div>
+
+    </div>
+  </div>
+</body>
+</html>
