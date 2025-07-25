@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,23 +12,12 @@
     }
 
     html, body {
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    font-size: 1rem;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    }
-
-
-
-    body {
-      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
       background-color: #005E60;
       color: #FFFFFF;
+      font-size: 1rem;
       overflow-x: hidden;
-      line-height: 1.5;
     }
 
     .top-header {
@@ -39,9 +28,6 @@
       padding: 12px 24px;
       border-bottom: 2px solid #C8FF08;
       box-shadow: 0 2px 12px rgba(200, 255, 8, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       flex-wrap: wrap;
     }
 
@@ -50,82 +36,68 @@
       background: linear-gradient(45deg, #C8FF08, #FFFFFF);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
       text-shadow: 0 0 15px rgba(200, 255, 8, 0.3);
-      flex: 1 1 60%;
       text-align: center;
+      flex: 1;
     }
 
     .vernova-logo {
-      height: 55px;
-      filter: brightness(1.1) contrast(1.1) drop-shadow(0 0 8px rgba(200, 255, 8, 0.6));
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 6px;
+      height: 50px;
       margin-left: auto;
     }
 
     .presentation-container {
-        flex: 1;
-        max-height: 100vh;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: clamp(300px, 90%, 1100px);
-        margin: auto;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 20px;
-        border: 3px solid #C8FF08;
-        box-shadow: 0 0 40px rgba(200, 255, 8, 0.2);
-    }
-
-
-    .intro-row {
-        flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        overflow: hidden;
-        height: 100%;
-        }
-
-    .profile-section {
-        flex: 0 0 260px;
-        text-align: center;
-        background: rgba(255, 255, 255, 0.07);
-        border: 2px solid rgba(200, 255, 8, 0.2);
-        border-radius:  20px;
-        padding: 36px 20px;
-        backdrop-filter: blur(12px);
-    }
-
-    .profile-section img {
-        height: 90px;
-        width: 90px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #C8FF08;
-    }
-
-    .profile-section span {
-        display: block;
-        font-size: 1.0rem;
-        color: #C8FF08;
-        margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      margin: 2rem auto;
+      width: clamp(300px, 95%, 1200px);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      border: 3px solid #C8FF08;
+      box-shadow: 0 0 40px rgba(200, 255, 8, 0.2);
     }
 
     .slide {
-      position: relative;
-      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
 
-    .info-blocks {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 3px;
-      margin-bottom: 40px;
+    .intro-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .left-column,
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .left-column {
+      flex: 0 1 300px;
+    }
+
+    .right-column {
+      flex: 1 1 0;
+    }
+
+    .profile-section {
+      background: rgba(255, 255, 255, 0.07);
+      border: 2px solid rgba(200, 255, 8, 0.2);
+      border-radius: 20px;
+      padding: 36px 20px;
+      text-align: center;
+    }
+
+    .profile-section img {
+      height: 90px;
+      width: 90px;
+      border-radius: 50%;
+      border: 2px solid #C8FF08;
+      object-fit: cover;
     }
 
     .info-card {
@@ -133,76 +105,28 @@
       border: 2px solid rgba(200, 255, 8, 0.2);
       border-radius: 20px;
       padding: 18px;
-      backdrop-filter: blur(15px);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
       font-size: 0.98rem;
       line-height: 1.6;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
-      
+      justify-content: space-between;
+      transition: transform 0.3s;
     }
 
     .info-card:hover {
-      transform: translateY(-5px) scale(1.02);
+      transform: translateY(-4px);
       box-shadow: 0 10px 30px rgba(200, 255, 8, 0.3);
       border-color: #C8FF08;
     }
 
     .info-card h3 {
-      margin-bottom: 10px;
       color: #C8FF08;
+      margin-bottom: 10px;
     }
 
     .info-card ul {
-      list-style-type: none;
+      list-style: none;
       padding: 0;
-    }
-
-    .healthcare-card .healthcare-content {
-        display: flex;
-        gap: 16px;
-        align-items: center;
-        flex-wrap: nowrap;
-        }
-
-    .healthcare-card .healthcare-text {
-    flex: 1 1 60%;
-    }
-
-    .healthcare-card .healthcare-image {
-    flex: 1 1 35%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    }
-    
-    .turbine-image {
-    display: flex;
-    gap: 8px;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: center;
-    max-width: 100%;
-    }
-
-    .turbine-image img {
-    height: 110px;
-    width: auto;
-    object-fit: contain;
-    border-radius: 8px;
-    border: 1px solid #C8FF08;
-    box-shadow: 0 0 6px rgba(200, 255, 8, 0.2);
-    }
-        
-    .healthcare-card .healthcare-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid #C8FF08;
-    box-shadow: 0 0 10px rgba(200, 255, 8, 0.2);
     }
 
     .info-card li::before {
@@ -211,42 +135,63 @@
       margin-right: 6px;
     }
 
+    .healthcare-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .healthcare-text {
+      flex: 1;
+    }
+
+    .healthcare-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .healthcare-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 1px solid #C8FF08;
+      box-shadow: 0 0 10px rgba(200, 255, 8, 0.2);
+    }
+
+    .turbine-image {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .turbine-image img {
+      height: 100px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid #C8FF08;
+    }
+
     .how-i-fell-card {
-        flex: 1;
-        min-width: 300px;
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 16px;
-        height: 100%;
-      
-    }
-    .info-card:first-child h3 {
-        margin-bottom: 4px;
-        margin-top: -4px;
-    }
-    .info-card:first-child ul {
-        margin-top: 4px;
-    }
-    .info-card:last-child {
-        margin-bottom: 0;
-        padding-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
     .how-text {
       flex: 1;
-      text-align: left;
     }
 
     .floating-elements {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
       pointer-events: none;
       z-index: -1;
+      width: 100%;
+      height: 100%;
     }
 
     .floating-shape {
@@ -259,7 +204,6 @@
       top: 10%;
       left: 10%;
       font-size: 2rem;
-      animation-delay: 0s;
     }
 
     .floating-shape:nth-child(2) {
@@ -268,93 +212,35 @@
       font-size: 1.5rem;
       animation-delay: 2s;
     }
-    .left-column {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        flex: 0 0 300px;
-        }
-
-        .right-column {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        gap: 24px;
-        }
-
-        /* Optional: Stack everything vertically on small screens */
-        @media (max-width: 900px) {
-        .intro-row {
-            flex-direction: column;
-        }
-
-        .left-column, .right-column {
-            flex: 1 1 100%;
-        }
-        }
-        @media (max-width: 700px) {
-        .healthcare-card .healthcare-content {
-            flex-direction: column;
-        }
-
-        .healthcare-card .healthcare-image {
-            justify-content: center;
-            margin-top: 12px;
-        }
-        }
-        .healthcare-card {
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        }
-
-        .healthcare-card ul {
-        margin-bottom: 0;
-        }
-
 
     @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(180deg); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
     }
 
-    /* Media Queries */
     @media (max-width: 1024px) {
-      .info-blocks {
-        grid-template-columns: repeat(2, 1fr);
+      .right-column, .left-column {
+        flex: 1 1 100%;
       }
     }
 
-    @media (max-width: 600px) {
-      .info-blocks {
-        grid-template-columns: 1fr;
+    @media (max-width: 700px) {
+      .healthcare-content {
+        flex-direction: column;
       }
 
       .top-header {
         flex-direction: column;
-        align-items: center;
         text-align: center;
       }
 
       .top-header h1 {
         font-size: 1.2rem;
-        margin: 10px 0;
-      }
-
-      .vernova-logo {
-        margin-top: 10px;
-      }
-
-      .info-card {
-        padding: 16px;
-        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Top header -->
   <div style="padding-left: 10%;" class="top-header">
     <h1>Ambient Intelligence: Technology That Learns While You Live</h1>
     <img src="vernova_logo.PNG" alt="Vernova Logo" class="vernova-logo" />
@@ -367,33 +253,33 @@
         <div class="floating-shape">⚡</div>
       </div>
       <div class="intro-row">
-       
         <div class="left-column">
-            <div class="profile-section">
+          <div class="profile-section">
             <img src="Portfolio_2.jpeg" alt="Profile Picture" />
             <span>Mahathi Gumudavelli</span>
             <span>Computer Science - Georgia Tech</span>
             <span>Cyber & AI</span>
-            </div>
+          </div>
 
-            <div class="info-card how-i-fell-card">
+          <div class="info-card how-i-fell-card">
             <div class="how-text">
-                <h3>How I Fell Down the Rabbit Hole</h3>
-                <p>I visited a smart home where technology was invisible. Lights automatically dimmed for a movie, AC adjusted to weather, music followed us room to room.</p>
-                <p>No commands, no apps, but everything had seamless functionality offering us the "Ambient Experience". <strong>This isn't just "AI" </strong> but <strong>"AmI"</strong> allowing for infrastructure that feels psychic.</p>
+              <h3>How I Fell Down the Rabbit Hole</h3>
+              <p>I visited a smart home where technology was invisible. Lights automatically dimmed for a movie, AC adjusted to weather, music followed us room to room.</p>
+              <p>No commands, no apps, but everything had seamless functionality offering us the "Ambient Experience". <strong>This isn't just "AI"</strong> but <strong>"AmI"</strong> allowing for infrastructure that feels psychic.</p>
             </div>
             <div style="flex-shrink: 0; font-size: 3rem;">🏠</div>
-            </div>
+          </div>
         </div>
+
         <div class="right-column">
-            <div class="info-card healthcare-card">
-                <div class="healthcare-content">
-                    <div class="healthcare-text">
-                    <h3>How It Works</h3>
-                    <ul>
-                        <li><strong>Sensor Networks</strong> to Gather Data</li>
-                        <li><strong>Interconnected Web</strong> and Internet of Things</li>
-                        <li><strong>Predictive Behavior</strong> to Learn and Improve</li>
+          <div class="info-card healthcare-card">
+            <div class="healthcare-content">
+              <div class="healthcare-text">
+                <h3>How It Works</h3>
+                <ul>
+                    <li><strong>Sensor Networks</strong> to Gather Data</li>
+                    <li><strong>Interconnected Web</strong> and Internet of Things</li>
+                    <li><strong>Predictive Behavior</strong> to Learn and Improve</li>
                     </ul>
                     <p><em><strong>Context aware, adapting to changing needs, and offer real-time support.</strong></em></p>
                 </div>
@@ -450,6 +336,7 @@
 
     
     </div>
+  </div>
   </div>
 </body>
 </html>
