@@ -11,12 +11,50 @@
       box-sizing: border-box;
     }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
-        font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-        background-color: #005E60;
-        color: #FFFFFF;
-        overflow-x: hidden;
-        line-height: 1.5;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      background-color: #005E60;
+      color: #FFFFFF;
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    .top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 94, 96, 0.8);
+      padding: 12px 24px;
+      border-bottom: 2px solid #C8FF08;
+      box-shadow: 0 2px 12px rgba(200, 255, 8, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+
+    .top-header h1 {
+      font-size: 1.8rem;
+      background: linear-gradient(45deg, #C8FF08, #FFFFFF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 0 0 15px rgba(200, 255, 8, 0.3);
+      flex: 1 1 60%;
+      text-align: center;
+    }
+
+    .vernova-logo {
+      height: 55px;
+      filter: brightness(1.1) contrast(1.1) drop-shadow(0 0 8px rgba(200, 255, 8, 0.6));
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      padding: 6px;
+      margin-left: auto;
     }
 
     .presentation-container {
@@ -27,115 +65,118 @@
       border-radius: 20px;
       border: 3px solid #C8FF08;
       box-shadow: 0 0 40px rgba(200, 255, 8, 0.2);
+      min-height: calc(100vh - 100px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .intro-row {
+        display: flex;
+        gap: 24px;
+        margin: 20px 0 30px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .profile-section {
+        flex: 0 0 260px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.07);
+        border: 2px solid rgba(200, 255, 8, 0.2);
+        border-radius:  20px;
+        padding: 3px 20px;
+        backdrop-filter: blur(12px);
+    }
+
+    .profile-section img {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #C8FF08;
+    }
+
+    .profile-section span {
+        display: block;
+        font-size: 0.9rem;
+        color: #C8FF08;
+        margin-top: 8px;
     }
 
     .slide {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 40px;
       position: relative;
-    }
-
-    .header-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px; 
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-      background: linear-gradient(45deg, #C8FF08, #FFFFFF);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: 0 0 20px rgba(200, 255, 8, 0.3);
+      flex: 1;
     }
 
     .info-blocks {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      width: 100%;
-    }
-
-    .info-card ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-        }
-
-
-    .info-card li {
-        margin-bottom: 10px;
-        padding: 0 10px;
-    }
-    .info-card p {
-        margin: 6px 0;
-        font-size: 0.95rem;
-    }
-    .info-card ul li::before {
-        content: "• ";
-        color: #C8FF08;
-        margin-right: 6px;
+      gap: 24px;
+      margin-bottom: 40px;
     }
 
     .info-card {
-        background: rgba(255, 255, 255, 0.1);
-        border: 2px solid rgba(200, 255, 8, 0.2);
-        border-radius: 20px;
-        padding: 20px;
-        text-align: center;
-        backdrop-filter: blur(15px);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center; 
-        height: 100%;
-        }
-    .header-profile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex-shrink: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(200, 255, 8, 0.2);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      
     }
-    .header-profile img {
-    height: 75px;
-    width: 75px;
-    object-fit: cover;
-    border: 2px solid #C8FF08;
-    }
-
-    .header-profile span {
-        font-size: 0.65rem;
-        color: #C8FF08;
-        margin-top: 4px;
-    }
-
-    h1 {
-        font-size: 1.65rem; 
-        margin-bottom: 30px;
-        background: linear-gradient(45deg, #C8FF08, #FFFFFF);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: 0 0 20px rgba(200, 255, 8, 0.3);
-    }
-
 
     .info-card:hover {
       transform: translateY(-5px) scale(1.02);
       box-shadow: 0 10px 30px rgba(200, 255, 8, 0.3);
       border-color: #C8FF08;
+    }
+
+    .info-card h3 {
+      margin-bottom: 10px;
+      color: #C8FF08;
+    }
+
+    .info-card ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .info-card li::before {
+      content: "• ";
+      color: #C8FF08;
+      margin-right: 6px;
+    }
+
+    .how-i-fell-card {
+        flex: 1;
+        min-width: 300px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        height: 100%;
+      
+    }
+    .info-card:first-child h3 {
+        margin-bottom: 4px;
+        margin-top: -4px;
+    }
+    .info-card:first-child ul {
+        margin-top: 4px;
+    }
+
+    .how-text {
+      flex: 1;
+      text-align: left;
     }
 
     .floating-elements {
@@ -168,53 +209,12 @@
       animation-delay: 2s;
     }
 
-    .floating-shape:nth-child(3) {
-      bottom: 20%;
-      left: 20%;
-      font-size: 2.5rem;
-      animation-delay: 4s;
-    }
-
     @keyframes float {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-30px) rotate(180deg); }
     }
-    .header-right-image {
-    height: 75px; 
-    margin-left: 20px;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 0 10px #C8FF08aa;
-    }
-    .how-i-fell-card {
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center;  
-        justify-content: flex-start; 
-        gap: 20px;
-        padding: 12px 16px !important;
-        line-height: 1.3 !important;
-        text-align: left; 
-        }
 
-        .how-text {
-        flex: 1;
-        text-align: left;
-        padding-right: 10px;
-        }
-
-        .how-text p {
-        margin-bottom: 12px; 
-        }
-
-    .slide-number {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      color: rgba(255, 255, 255, 0.6);
-      font-size: 0.9rem;
-    }
-
+    /* Media Queries */
     @media (max-width: 1024px) {
       .info-blocks {
         grid-template-columns: repeat(2, 1fr);
@@ -222,15 +222,39 @@
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 1.8rem; }
-      .info-card { padding: 15px; }
       .info-blocks {
         grid-template-columns: 1fr;
+      }
+
+      .top-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .top-header h1 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+      }
+
+      .vernova-logo {
+        margin-top: 10px;
+      }
+
+      .info-card {
+        padding: 16px;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Top header -->
+  <div style="padding-left: 256px;" class="top-header">
+    <h1>Ambient Intelligence: Technology That Learns While You Live</h1>
+    <img src="vernova_logo.PNG" alt="Vernova Logo" class="vernova-logo" />
+  </div>
+
   <div class="presentation-container">
     <div class="slide">
       <div class="floating-elements">
@@ -238,63 +262,58 @@
         <div class="floating-shape">⚡</div>
       </div>
 
-      <div class="header-container">
-        <div class="header-profile">
+    <div class="intro-row">
+        <div class="profile-section">
             <img src="Portfolio_2.jpeg" alt="Profile Picture" />
-            <span>Computer Science at Georgia Tech</span>
-        </div>
-        <h1>Ambient Intelligence: Technology That Learns While You Live</h1>
-         <img src="vernova_logo.PNG" alt="Relevant Graphic" class="header-right-image" />
+            <span>Mahathi Gumudavelli</span>
+            <span>Computer Science - Georgia Tech Cyber & AI</span>
         </div>
 
-      <div class="info-blocks">
-  <div class="info-card how-i-fell-card" style="grid-column: span 4; padding: 12px 16px; line-height: 1.1; flex-direction: row; gap: 20px;">
-  <div class="how-text" style="flex: 1; text-align: center; margin-left: 5px, ">
-    <h3>How I Fell Down the Rabbit Hole</h3>
-    <p>Visited a friend's smart home where technology was invisible. Lights dimmed for a movie, AC adjusted to weather, music followed us room to room.</p>
-    <p>No commands made, no apps used, but everything had seamless functionality. <strong>NOT "AI"</strong>, but <strong>"AmI"</strong>: infrastructure that feels psychic.</p>
-  </div>
-  <div class="how-emoji" style="flex-shrink: 0; font-size: 4rem; display: flex; align-items: center;">
-    🏠
-  </div>
-</div>
-  
-  <div class="info-card" style="padding: 12px 16px; line-height: 1.9;">
-    <h3>How It Works</h3>
-    <ul>
-      <li><strong>Invisible Computing</strong></li>
-      <li><strong>Interconnected Web</strong></li>
-      <li><strong>Predictive Behavior</strong></li>
-      <p>Uses sensors and data to anticipate needs and adapt environments seamlessly.</p>
-    </ul>
-  </div>
-  
-  <div class="info-card" style="padding: 12px 16px;">
-    <h3>Healthcare Breakthroughs</h3>
-    <ul>
-      <li>Stanford uses tiny cameras to detect cognitive decline early.</li>
-      <li>Microsoft's ambient listening systems transform healthcare.</li>
-      <li>Human-level accuracy in clinical note generation.</li>
-    </ul>
-  </div>
-  
-  <div class="info-card" style="padding: 12px 16px;">
-    <h3>GE Vernova Opportunity</h3>
-    <ul>
-      <li>Applies ambient intelligence to energy infrastructure.</li>
-      <li>Enables predictive maintenance.</li>
-      <li>Supports smart grid balancing.</li>
-      <li>Drives self-optimizing, intelligent operations.</li>
-    </ul>
-  </div>
-  
-  <div class="info-card" style="padding: 12px 16px;">
-    <h3>Why This Matters to Me</h3>
-    <p>It is bigger than convenience for me because Stanford’s research hits close to home.</p>
-    <p>My grandmother showed early signs of cognitive decline we missed, and I truly believe AmI could have alerted us to unseen changes.</p>
-  </div>
-</div>
+        <div class="info-card how-i-fell-card">
+            <div style="text-align: center;" class="how-text">
+            <h3>How I Fell Down the Rabbit Hole</h3>
+            <p>Visited a friend's smart home where technology was invisible. Lights dimmed for a movie, AC adjusted to weather, music followed us room to room.</p>
+            <p>No commands made, no apps used, but everything had seamless functionality. <strong>NOT "AI"</strong>, but <strong>"AmI"</strong>: infrastructure that feels psychic.</p>
+            </div>
+            <div style="flex-shrink: 0; font-size: 3rem;">🏠</div>
+        </div>
+    </div>
+    <div class="info-blocks">
+        <div class="info-card">
+          <h3>How It Works</h3>
+          <ul>
+            <li><strong>Invisible Computing</strong></li>
+            <li><strong>Interconnected Web</strong></li>
+            <li><strong>Predictive Behavior</strong></li>
+          </ul>
+          <p>Uses sensors and data to anticipate needs and adapt environments seamlessly.</p>
+        </div>
 
+        <div class="info-card">
+          <h3>Healthcare Breakthroughs</h3>
+          <ul>
+            <li>Stanford uses tiny cameras to detect cognitive decline early.</li>
+            <li>Microsoft's ambient listening systems transform healthcare.</li>
+            <li>Human-level accuracy in clinical note generation.</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>GE Vernova Opportunity</h3>
+          <ul>
+            <li>Applies ambient intelligence to energy infrastructure.</li>
+            <li>Enables predictive maintenance.</li>
+            <li>Supports smart grid balancing.</li>
+            <li>Drives self-optimizing, intelligent operations.</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Why This Matters to Me</h3>
+          <p>It is bigger than convenience for me because Stanford’s research hits close to home.</p>
+          <p>My grandmother showed early signs of cognitive decline we missed, and I truly believe AmI could have alerted us to unseen changes.</p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
