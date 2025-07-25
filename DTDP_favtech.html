@@ -12,9 +12,16 @@
     }
 
     html, body {
-       width: 100%;
-        font-size: 1rem;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
     }
+
+
 
     body {
       font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -59,26 +66,30 @@
     }
 
     .presentation-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      border: 3px solid #C8FF08;
-      box-shadow: 0 0 40px rgba(200, 255, 8, 0.2);
-      min-height: calc(100vh - 100px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+        flex: 1;
+        max-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: clamp(300px, 90%, 1100px);
+        margin: auto;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        border: 3px solid #C8FF08;
+        box-shadow: 0 0 40px rgba(200, 255, 8, 0.2);
     }
 
+
     .intro-row {
+        flex: 1;
         display: flex;
-        gap: 24px;
-        margin: 20px 0 30px;
         flex-wrap: wrap;
-        align-items: flex-start;
-    }
+        gap: 16px;
+        overflow: hidden;
+        height: 100%;
+        }
 
     .profile-section {
         flex: 0 0 260px;
@@ -113,7 +124,7 @@
     .info-blocks {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
+      gap: 3px;
       margin-bottom: 40px;
     }
 
@@ -121,7 +132,7 @@
       background: rgba(255, 255, 255, 0.1);
       border: 2px solid rgba(200, 255, 8, 0.2);
       border-radius: 20px;
-      padding: 35px;
+      padding: 18px;
       backdrop-filter: blur(15px);
       transition: all 0.3s ease;
       position: relative;
@@ -150,6 +161,50 @@
       padding: 0;
     }
 
+    .healthcare-card .healthcare-content {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        flex-wrap: nowrap;
+        }
+
+        .healthcare-card .healthcare-text {
+        flex: 1 1 60%;
+        }
+
+        .healthcare-card .healthcare-image {
+        flex: 1 1 35%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        }
+        
+       .turbine-image {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.turbine-image img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #C8FF08;
+  box-shadow: 0 0 6px rgba(200, 255, 8, 0.2);
+}
+       
+        .healthcare-card .healthcare-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 1px solid #C8FF08;
+        box-shadow: 0 0 10px rgba(200, 255, 8, 0.2);
+        }
+
     .info-card li::before {
       content: "• ";
       color: #C8FF08;
@@ -173,6 +228,10 @@
     }
     .info-card:first-child ul {
         margin-top: 4px;
+    }
+    .info-card:last-child {
+        margin-bottom: 0;
+        padding-bottom: 1rem;
     }
 
     .how-text {
@@ -209,6 +268,51 @@
       font-size: 1.5rem;
       animation-delay: 2s;
     }
+    .left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        flex: 0 0 300px;
+        }
+
+        .right-column {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 24px;
+        }
+
+        /* Optional: Stack everything vertically on small screens */
+        @media (max-width: 900px) {
+        .intro-row {
+            flex-direction: column;
+        }
+
+        .left-column, .right-column {
+            flex: 1 1 100%;
+        }
+        }
+        @media (max-width: 700px) {
+        .healthcare-card .healthcare-content {
+            flex-direction: column;
+        }
+
+        .healthcare-card .healthcare-image {
+            justify-content: center;
+            margin-top: 12px;
+        }
+        }
+        .healthcare-card {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        }
+
+        .healthcare-card ul {
+        margin-bottom: 0;
+        }
+
 
     @keyframes float {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
@@ -251,7 +355,7 @@
 </head>
 <body>
   <!-- Top header -->
-  <div style="padding-left: 256px;" class="top-header">
+  <div style="padding-left: 10%;" class="top-header">
     <h1>Ambient Intelligence: Technology That Learns While You Live</h1>
     <img src="vernova_logo.PNG" alt="Vernova Logo" class="vernova-logo" />
   </div>
@@ -262,61 +366,89 @@
         <div class="floating-shape">🧠</div>
         <div class="floating-shape">⚡</div>
       </div>
-
-    <div class="intro-row">
-        <div class="profile-section">
+      <div class="intro-row">
+       
+        <div class="left-column">
+            <div class="profile-section">
             <img src="Portfolio_2.jpeg" alt="Profile Picture" />
             <span>Mahathi Gumudavelli</span>
-            <span>Computer Science - Georgia Tech Cyber & AI</span>
-        </div>
+            <span>Computer Science - Georgia Tech</span>
+            <span>Cyber & AI</span>
+            </div>
 
-        <div class="info-card how-i-fell-card">
-            <div style="text-align: center;" class="how-text">
-            <h3>How I Fell Down the Rabbit Hole</h3>
-            <p>I visited a smart home where technology was invisible. Lights automatically dimmed for a movie, AC adjusted to weather, music followed us room to room.</p>
-            <p>No commands, no apps, but everything had seamless functionality offering us the "Ambient Experience". <strong>This isn't just "AI" </strong> but <strong> "AmI"</strong> allowing for infrastructure that feels psychic.</p>
+            <div class="info-card how-i-fell-card">
+            <div class="how-text">
+                <h3>How I Fell Down the Rabbit Hole</h3>
+                <p>I visited a smart home where technology was invisible. Lights automatically dimmed for a movie, AC adjusted to weather, music followed us room to room.</p>
+                <p>No commands, no apps, but everything had seamless functionality offering us the "Ambient Experience". <strong>This isn't just "AI" </strong> but <strong>"AmI"</strong> allowing for infrastructure that feels psychic.</p>
             </div>
             <div style="flex-shrink: 0; font-size: 3rem;">🏠</div>
+            </div>
         </div>
-    </div>
-    <div class="info-blocks">
-        <div class="info-card">
-          <h3>How It Works</h3>
-          <ul>
-            <li><strong>Sensor Networks</strong> to Gather Data</li>
-            <li><strong>Interconnected Web</strong> and Internet of Things</li>
-            <li><strong>Predictive Behavior</strong> to Learn and Improve</li>
-          </ul>
-          <p><em><strong>Context aware, adapting to changing needs, and offer real-time support.</strong></em></p>
+        <div class="right-column">
+            <div class="info-card healthcare-card">
+                <div class="healthcare-content">
+                    <div class="healthcare-text">
+                    <h3>How It Works</h3>
+                    <ul>
+                        <li><strong>Sensor Networks</strong> to Gather Data</li>
+                        <li><strong>Interconnected Web</strong> and Internet of Things</li>
+                        <li><strong>Predictive Behavior</strong> to Learn and Improve</li>
+                    </ul>
+                    <p><em><strong>Context aware, adapting to changing needs, and offer real-time support.</strong></em></p>
+                </div>
+                    <div class="healthcare-image">
+                    <img src="AMI_HowTo.jfif" alt="Stanford Study Picture" />
+                    </div>
+                </div>
+            </div>
+          
+
+            <div class="info-card healthcare-card">
+                <div class="healthcare-content">
+                    <div class="healthcare-text">
+                    <h3>Healthcare Application</h3>
+                    <ul>
+                        <li>Stanford study detecting cognitive decline early.</li>
+                        <li>Microsoft's ambient listening with DAX Copilot</li>
+                        <li>Non-invasive Patient RT Monitoring</li>
+                    </ul>
+                    <p><em><strong>Selective Environments, Clear Consent, and Data Security!</strong></em></p>
+                    </div>
+                    <div class="healthcare-image">
+                    <img src="Stanford.png" alt="Stanford Study Picture" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card healthcare-card">
+                <div class="healthcare-content">
+                    <div class="healthcare-text">
+                   <h3>GE Vernova Opportunity</h3>
+                    <ul>
+                        <li>Integrate AmI into energy infrastructure</li>
+                        <li>Enable predictive diagnostics and maintenance.</li>
+                        <li>Optimize energy distribution using context-aware grids</li>
+                        <p><em><strong>Reducing operational waste, inefficiencies, and unplanned downtime.</strong></em></p>
+                    </ul>
+                        
+                    </div>
+                    <div class="turbine-image">
+                    <img src="turbine.gif" alt="Wind turbine Gif" />
+                    <img src="turbine_repair.jpg" alt="Wind Turbine Repair" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+            <h3>Why This Matters to Me</h3>
+            <p>Stanford’s research hits close to home. My grandmother showed early signs </p>
+            <p>of cognitive decline we missed. I truly believe AmI could have alerted us to unseen changes.</p>
+            </div>
+        </div>
         </div>
 
-        <div class="info-card">
-          <h3>Healthcare Application</h3>
-          <ul>
-            <li>Stanford study detecting cognitive decline early.</li>
-            <li>Microsoft's ambient listening with DAX Copilot</li>
-            <li>Non-invasive Patient RT Monitoring</li>
-            <p><em><strong>Selective Environments, Clear Consent, and Data Security!</strong></em></p>
-          </ul>
-          <img src="Stanford.png" alt="Stanford Study Picture" />
-        </div>
-
-        <div class="info-card">
-          <h3>GE Vernova Opportunity</h3>
-          <ul>
-            <li>Integrate AmI into energy infrastructure</li>
-            <li>Enable predictive diagnostics and maintenance.</li>
-            <li>Optimize energy distribution using context-aware grids</li>
-            <p><em><strong>Reducing operational waste, inefficiencies, and unplanned downtime.</strong></em></p>
-          </ul>
-        </div>
-
-        <div class="info-card">
-          <h3>Why This Matters to Me</h3>
-          <p>It is bigger than convenience for me because Stanford’s research hits close to home.</p>
-          <p>My grandmother showed early signs of cognitive decline we missed, and I truly believe AmI could have alerted us to unseen changes.</p>
-        </div>
-      </div>
+    
     </div>
   </div>
 </body>
